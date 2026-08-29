@@ -1,0 +1,1001 @@
+/* =========================================================
+   ANIKET CAFÉ
+   GRAND OPENING CEREMONY
+========================================================= */
+
+.opening-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(111, 65, 34, 0.25),
+            transparent 50%
+        ),
+        #100704;
+
+    animation:
+        overlayAppear .8s ease forwards;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.opening-glow {
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(214, 166, 108, .10);
+
+    filter: blur(100px);
+
+    animation:
+        glowPulse 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes glowPulse {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.8);
+
+        opacity: .4;
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.3);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.opening-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(900px, 92%);
+
+    text-align: center;
+
+    animation:
+        contentReveal 1s ease forwards;
+}
+
+
+@keyframes contentReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SMALL TEXT
+========================================================= */
+
+.opening-small {
+
+    margin: 0 0 15px;
+
+    color: #c99a63;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    animation:
+        fadeUp .8s ease .3s both;
+}
+
+
+/* =========================================================
+   CAFE NAME
+========================================================= */
+
+.opening-content h1 {
+
+    margin: 0;
+
+    color: #fff7ef;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(55px, 8vw, 95px);
+
+    font-weight: 500;
+
+    line-height: .9;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 10px 40px rgba(0,0,0,.5);
+
+    animation:
+        titleReveal 1s ease .5s both;
+}
+
+
+.opening-content h1 span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #d6a66c;
+
+    font-size: .55em;
+
+    font-style: italic;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   GRAND OPENING
+========================================================= */
+
+.opening-title {
+
+    margin: 25px 0;
+
+    color: #d7c0a7;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 7px;
+
+    animation:
+        fadeUp .8s ease 1s both;
+}
+
+
+/* =========================================================
+   PERSONAL MESSAGE
+========================================================= */
+
+.personal-message {
+
+    max-width: 620px;
+
+    margin: 0 auto 25px;
+
+    animation:
+        fadeUp .8s ease 1.2s both;
+}
+
+
+.personal-message h2 {
+
+    margin-bottom: 12px;
+
+    color: #fff3e7;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(25px, 4vw, 36px);
+
+    font-style: italic;
+}
+
+
+.personal-message p {
+
+    margin: 5px 0;
+
+    color: #a99a90;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.personal-message .proud-message {
+
+    margin-top: 8px;
+
+    color: #d6a66c;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   CUTTING AREA
+========================================================= */
+
+.cutting-area {
+
+    animation:
+        fadeUp .8s ease 1.5s both;
+}
+
+
+.cut-instruction {
+
+    margin: 0 0 8px;
+
+    color: #806f64;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RIBBON CONTAINER
+========================================================= */
+
+.ribbon-container {
+
+    position: relative;
+
+    width:
+        min(760px, 90vw);
+
+    height: 100px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   RIBBON
+========================================================= */
+
+.ribbon {
+
+    position: absolute;
+
+    top: 50%;
+
+    height: 45px;
+
+    width: 50%;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            #b52c3d,
+            #761421,
+            #a52334
+        );
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.4);
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity .6s ease;
+}
+
+
+.ribbon::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px 0;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-bottom:
+        1px solid
+        rgba(0,0,0,.2);
+}
+
+
+.ribbon-left {
+
+    right: 50%;
+
+    border-radius:
+        5px 0 0 5px;
+
+    transform-origin:
+        right center;
+}
+
+
+.ribbon-right {
+
+    left: 50%;
+
+    border-radius:
+        0 5px 5px 0;
+
+    transform-origin:
+        left center;
+}
+
+
+/* =========================================================
+   CUT POINT
+========================================================= */
+
+.cut-point {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 3;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(214,166,108,.7);
+
+    color: #c99a63;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    background:
+        rgba(16,7,4,.75);
+
+    animation:
+        cutPointPulse 1.5s
+        ease-in-out infinite;
+}
+
+
+@keyframes cutPointPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: .6;
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.12);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SCISSORS
+========================================================= */
+
+.scissors {
+
+    position: absolute;
+
+    left: 30px;
+
+    top: 50%;
+
+    z-index: 10;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 48px;
+
+    cursor: grab;
+
+    user-select: none;
+
+    touch-action: none;
+
+    transform:
+        translateY(-50%);
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(0,0,0,.6)
+        );
+
+    transition:
+        transform .15s ease;
+}
+
+
+.scissors:hover {
+
+    transform:
+        translateY(-50%)
+        scale(1.1)
+        rotate(-5deg);
+}
+
+
+.scissors:active {
+
+    cursor: grabbing;
+
+    transform:
+        translateY(-50%)
+        scale(1.15)
+        rotate(-8deg);
+}
+
+
+/* =========================================================
+   CUT EFFECT
+========================================================= */
+
+.opening-overlay.cut-complete
+.ribbon-left {
+
+    transform:
+        translate(-180px, -50%)
+        rotate(-8deg)
+        skewX(-8deg);
+
+    opacity: 0;
+}
+
+
+.opening-overlay.cut-complete
+.ribbon-right {
+
+    transform:
+        translate(180px, -50%)
+        rotate(8deg)
+        skewX(8deg);
+
+    opacity: 0;
+}
+
+
+.opening-overlay.cut-complete
+.scissors {
+
+    animation:
+        scissorsCut .6s ease forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes scissorsCut {
+
+    0% {
+
+        transform:
+            translateY(-50%)
+            scale(1)
+            rotate(-5deg);
+    }
+
+    35% {
+
+        transform:
+            translateY(-50%)
+            scale(1.25)
+            rotate(8deg);
+    }
+
+    65% {
+
+        transform:
+            translateY(-50%)
+            scale(1.15)
+            rotate(-8deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(-50%)
+            scale(1)
+            rotate(-5deg);
+    }
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+
+    display: none;
+
+    opacity: 0;
+
+    margin-top: 10px;
+}
+
+
+.success-message.show {
+
+    display: block;
+
+    animation:
+        successReveal 1s ease forwards;
+}
+
+
+.confetti-symbols {
+
+    margin-bottom: 8px;
+
+    font-size: 22px;
+
+    letter-spacing: 5px;
+
+    animation:
+        celebrationBounce 1s
+        ease infinite alternate;
+}
+
+
+.success-message h2 {
+
+    margin: 0 0 8px;
+
+    color: #d6a66c;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(32px, 5vw, 48px);
+}
+
+
+.success-message p {
+
+    margin: 4px 0;
+
+    color: #b4a69d;
+
+    font-size: 12px;
+}
+
+
+.success-message p:last-of-type {
+
+    color: #d6c4b3;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.enter-cafe-btn {
+
+    margin-top: 20px;
+
+    padding: 12px 28px;
+
+    border:
+        1px solid #d6a66c;
+
+    border-radius: 40px;
+
+    background: #d6a66c;
+
+    color: #1a0e08;
+
+    font-family:
+        Poppins,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        all .35s ease;
+}
+
+
+.enter-cafe-btn span {
+
+    margin-left: 8px;
+
+    font-size: 16px;
+}
+
+
+.enter-cafe-btn:hover {
+
+    background: transparent;
+
+    color: #d6a66c;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(214,166,108,.2);
+}
+
+
+/* =========================================================
+   SKIP
+========================================================= */
+
+.skip-opening {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 20px;
+
+    z-index: 20;
+
+    border: none;
+
+    background: transparent;
+
+    color: #665950;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        color .3s ease;
+}
+
+
+.skip-opening:hover {
+
+    color: #d6a66c;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti-piece {
+
+    pointer-events: none;
+
+    user-select: none;
+
+    font-family: Georgia, serif;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   EXIT
+========================================================= */
+
+.opening-overlay.opening-close {
+
+    animation:
+        openingExit 1s ease forwards;
+}
+
+
+@keyframes openingExit {
+
+    from {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform: scale(1.04);
+
+        visibility: hidden;
+    }
+}
+
+
+/* =========================================================
+   GENERAL ANIMATIONS
+========================================================= */
+
+@keyframes overlayAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes successReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes celebrationBounce {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .opening-content {
+        width: 94%;
+    }
+
+    .opening-content h1 {
+        font-size: 52px;
+    }
+
+    .opening-content h1 span {
+        letter-spacing: 5px;
+    }
+
+    .opening-title {
+        letter-spacing: 5px;
+    }
+
+    .personal-message h2 {
+        font-size: 25px;
+    }
+
+    .personal-message p {
+        font-size: 11px;
+    }
+
+    .ribbon-container {
+
+        width: 95vw;
+
+        height: 80px;
+    }
+
+    .ribbon {
+        height: 32px;
+    }
+
+    .scissors {
+
+        width: 55px;
+
+        height: 55px;
+
+        font-size: 40px;
+
+        left: 15px;
+    }
+
+    .cut-point {
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+    .cut-instruction {
+        font-size: 8px;
+    }
+
+    .success-message h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .opening-content h1 {
+        font-size: 44px;
+    }
+
+    .personal-message h2 {
+        font-size: 22px;
+    }
+
+    .ribbon-container {
+        height: 70px;
+    }
+
+    .scissors {
+
+        font-size: 35px;
+
+        left: 5px;
+    }
+
+    .success-message h2 {
+        font-size: 30px;
+    }
+}
