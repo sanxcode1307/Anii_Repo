@@ -1,0 +1,969 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Café</title>
+    
+    <!-- Bootstrap 5 -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    >
+    
+    <!-- Bootstrap Icons -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'cafe/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cafe/css/About_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'cafe/css/Menu_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'cafe/css/Gallery_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'cafe/css/Contact_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'cafe/css/OurStory_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'cafe/css/Opening_Style.css' %}">
+</head>
+
+<body>
+    
+    
+    
+    <!-- ================= NAVBAR ================= -->
+    
+    <nav class="navbar navbar-expand-lg cafe-navbar">
+        
+        <div class="container">
+            
+            <!-- Logo -->
+            <a class="navbar-brand cafe-logo" href="#">
+                <span class="logo-icon">☕</span>
+                ANIKET  CAFÉ
+            </a>
+            
+            
+            <!-- Hamburger Button -->
+            <button
+            class="navbar-toggler hamburger-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#cafeNavbar"
+            aria-controls="cafeNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="cafeNavbar">
+            
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'home' %}">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">
+                        Menu
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </div>
+        
+    </div>
+    
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+    
+    <div class="hero-content">
+        
+        <p class="hero-small">
+            WELCOME TO OUR CAFÉ
+        </p>
+        
+        <h1>
+            BREW.
+            <span>SIP.</span>
+            VIBE.
+        </h1>
+        
+        <p class="hero-description">
+            Where every sip tells a story.
+            Discover handcrafted coffees, creamy milkshakes,
+            refreshing cold drinks and irresistible desserts.
+        </p>
+        
+        <div class="hero-buttons">
+            
+            <a href="#menu" class="btn btn-menu">
+                EXPLORE MENU
+            </a>
+            
+            <a href="{% url 'Our_Story' %}" class="btn btn-outline-light">
+                OUR STORY
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</section>
+
+<section class="menu-section" id="menu">
+    
+    <div class="menu-heading">
+        <span class="menu-label">OUR MENU</span>
+        
+        <h2>Made to <span>Crave</span></h2>
+        
+        <p>
+            From creamy cold coffees to indulgent desserts,
+            every bite is made to make you come back for more.
+        </p>
+    </div>
+    
+    
+    <!-- Category Filters -->
+    <div class="menu-filters">
+        
+        <button class="filter-btn active" data-category="all">
+            All
+        </button>
+        
+        <button class="filter-btn" data-category="coffee">
+            ☕ Cold Coffee
+        </button>
+        
+        <button class="filter-btn" data-category="shake">
+            🥤 Milkshakes
+        </button>
+        
+        <button class="filter-btn" data-category="icecream">
+            🍨 Ice Cream
+        </button>
+        
+        <button class="filter-btn" data-category="dessert">
+            🍫 Desserts
+        </button>
+        
+    </div>
+    
+    
+    <!-- Menu Cards -->
+    <div class="menu-grid">
+        
+        <!-- CARD 1 -->
+        <div class="menu-card" data-category="coffee">
+            
+            <div class="menu-image">
+                <img 
+                src="{% static 'cafe/images/Signature_Cold_Coffe.jpg' %}" 
+                alt="Signature Cold Coffee"
+                class="img-fluid"
+                >
+                
+                <span class="menu-badge">BEST SELLER</span>
+            </div>
+            
+            <div class="menu-content">
+                
+                <div class="menu-title-row">
+                    <h3>Signature Cold Coffee</h3>
+                    <span class="price">₹149</span>
+                </div>
+                
+                <p>
+                    Rich, creamy and chilled coffee with a smooth
+                    chocolate finish.
+                </p>
+                
+            </div>
+            
+        </div>
+        
+        
+        <!-- CARD 2 -->
+        <div class="menu-card" data-category="shake">
+            
+            <div class="menu-image">
+                <img 
+                src="{% static 'cafe/images/Oreo_Milkshake.jpg' %}" 
+                alt="Oreo Milkshake"
+                class="img-fluid"
+                >
+                
+                <span class="menu-badge">POPULAR</span>
+                
+            </div>
+            
+            <div class="menu-content">
+                
+                <div class="menu-title-row">
+                    <h3>Oreo Milkshake</h3>
+                    <span class="price">₹179</span>
+                </div>
+                
+                <p>
+                    Thick creamy milkshake blended with
+                    crunchy Oreo cookies.
+                </p>
+                
+            </div>
+            
+        </div>
+        
+        
+        <!-- CARD 3 -->
+        <div class="menu-card" data-category="dessert">
+            
+            <div class="menu-image">
+                
+                <img
+                src="{% static 'cafe/images/VannilaIcecream.jpg' %}"
+                alt="Vanilla Ice Cream"
+                class="img-fluid"
+                >
+                
+                <span class="menu-badge">SIGNATURE</span>
+                
+            </div>
+            
+            <div class="menu-content">
+                
+                <div class="menu-title-row">
+                    <h3>Vanilla Ice Cream</h3>
+                    <span class="price">₹179</span>
+                </div>
+                
+                <p>
+                    Creamy and smooth vanilla ice cream with a rich
+                    vanilla flavor.
+                </p>
+                
+            </div>
+            
+        </div>
+        
+        
+        <!-- CARD 4 -->
+        <div class="menu-card" data-category="icecream">
+            
+            <div class="menu-image">
+                
+                <img
+                src="{% static 'cafe/images/Brownie_Sunday.png' %}"
+                alt="Brownie Sundae"
+                class="img-fluid"
+                >
+                
+            </div>
+            
+            <div class="menu-content">
+                
+                <div class="menu-title-row">
+                    <h3>Brownie Sundae</h3>
+                    <span class="price">₹189</span>
+                </div>
+                
+                <p>
+                    Warm chocolate brownie topped with
+                    creamy vanilla ice cream.
+                </p>
+                
+            </div>
+            
+        </div>
+        
+        
+        <!-- CARD 5 -->
+        <div class="menu-card" data-category="dessert">
+            
+            <div class="menu-image">
+                
+                <img
+                src="{% static 'cafe/images/Chocolate_Waffle.png' %}"
+                alt="Chocolate Waffle"
+                class="img-fluid"
+                >
+            </div>
+            
+            <div class="menu-content">
+                
+                <div class="menu-title-row">
+                    <h3>Chocolate Waffle</h3>
+                    <span class="price">₹179</span>
+                </div>
+                
+                <p>
+                    Crispy golden waffle layered with
+                    smooth chocolate and cream.
+                </p>
+                
+            </div>
+            
+        </div>
+        
+        
+        <!-- CARD 6 -->
+        <div class="menu-card" data-category="shake">
+            
+            <div class="menu-image">
+                
+                <img
+                src="{% static 'cafe/images/Strawberry_Shake.png' %}"
+                alt="Strawberry Milkshake"
+                class="img-fluid"
+                >
+                
+            </div>
+            
+            <div class="menu-content">
+                
+                <div class="menu-title-row">
+                    <h3>Strawberry Shake</h3>
+                    <span class="price">₹159</span>
+                </div>
+                
+                <p>
+                    Fresh strawberry blended with chilled
+                    creamy milk.
+                </p>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    
+    <!-- Full Menu Button -->
+    <div class="full-menu-wrapper">
+        <a href="{% url 'menu' %}" 
+        class="btn btn-dark rounded-pill px-4 py-2 fw-semibold">
+        Explore Full Menu
+        <span class="ms-2">→</span>
+    </a>
+    
+</div>
+
+</section>
+
+
+
+<!-- About Section -->
+<section class="about-section py-5" id="about">
+    <div class="container py-5">
+        
+        <div class="row align-items-center g-5">
+            
+            <!-- Image -->
+            <div class="col-lg-6">
+                <div class="about-image-wrapper">
+                    <img 
+                    src="{% static 'cafe/images/Anii1.jpeg' %}"
+                    alt="Our Cafe"
+                    class="img-fluid about-image"
+                    >
+                </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="col-lg-6">
+                
+                <p class="about-subtitle text-uppercase mb-2">
+                    About Our Cafe
+                </p>
+                
+                <h2 class="about-title mb-4">
+                    Where Every Cup Tells a Story
+                </h2>
+                
+                <p class="about-text mb-4">
+                    Welcome to our cafe, a cozy place where great coffee,
+                    delicious food, and warm conversations come together.
+                    We believe that every cup should be crafted with care
+                    and every visit should feel special.
+                </p>
+                
+                <p class="about-text mb-4">
+                    From freshly brewed coffee to delicious desserts,
+                    everything we serve is prepared with quality ingredients
+                    and a whole lot of love.
+                </p>
+                
+                <!-- Features -->
+                <div class="row g-3 mb-4">
+                    
+                    <div class="col-sm-6">
+                        <div class="about-feature">
+                            <span>☕</span>
+                            <div>
+                                <h6>Fresh Coffee</h6>
+                                <small>Freshly brewed every day</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="about-feature">
+                            <span>🥐</span>
+                            <div>
+                                <h6>Fresh Food</h6>
+                                <small>Made with quality ingredients</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="about-feature">
+                            <span>❤️</span>
+                            <div>
+                                <h6>Made With Love</h6>
+                                <small>Every dish is crafted with care</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="about-feature">
+                            <span>✨</span>
+                            <div>
+                                <h6>Cozy Atmosphere</h6>
+                                <small>Your perfect relaxing spot</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <a href="#menu" class="btn about-btn px-4 py-2">
+                    Explore Our Menu
+                </a>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+<section class="gallery-section py-5" id="gallery">
+    
+    <div class="container py-5">
+        
+        <!-- Heading -->
+        <div class="text-center mb-5">
+            
+            <p class="gallery-subtitle">
+                OUR GALLERY
+            </p>
+            
+            <h2 class="gallery-title">
+                A Glimpse of Our Cafe
+            </h2>
+            
+            <p class="gallery-description">
+                A little look at the coffee, food and moments
+                that make our cafe special.
+            </p>
+            
+        </div>
+        
+        
+        <!-- Gallery -->
+        
+        <div class="cafe-gallery">
+            
+            <!-- 1 -->
+            <div class="gallery-card gallery-card-1">
+                
+                <img
+                src="{% static 'cafe/images/AniiInterrior.jpeg' %}"
+                alt="Cafe Interior"
+                >
+                
+                <div class="gallery-overlay">
+                    <div>
+                        <h5>Cafe Ambience</h5>
+                        <span>Our Cozy Space</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <!-- 2 -->
+            <div class="gallery-card gallery-card-2">
+                
+                <img
+                src="{% static 'cafe/images/Fresh_Coffe.png' %}"
+                alt="Fresh Coffee"
+                >
+                
+                <div class="gallery-overlay">
+                    <div>
+                        <h5>Fresh Coffee</h5>
+                        <span>Perfectly Brewed</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <!-- 3 -->
+            <div class="gallery-card gallery-card-3">
+                
+                <img
+                src="{% static 'cafe/images/AniiIce1.jpeg' %}"
+                alt="Cafe Dessert"
+                >
+                
+                <div class="gallery-overlay">
+                    <div>
+                        <h5>Sweet Moments</h5>
+                        <span>Delicious Desserts</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <!-- 4 -->
+            <div class="gallery-card gallery-card-4">
+                
+                <img
+                src="{% static 'cafe/images/Coffee_Cup.jpg' %}"
+                alt="Coffee Cup"
+                >
+                
+                <div class="gallery-overlay">
+                    <div>
+                        <h5>Perfect Brew</h5>
+                        <span>Freshly Brewed</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <!-- 5 -->
+            <div class="gallery-card gallery-card-5">
+                
+                <img
+                src="{% static 'cafe/images/Black_Lava.png' %}"
+                alt="Cafe Food"
+                >
+                
+                <div class="gallery-overlay">
+                    <div>
+                        <h5>Delicious Food</h5>
+                        <span>Fresh & Tasty</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <!-- 6 -->
+            <div class="gallery-card gallery-card-6">
+                
+                <img
+                src="{% static 'cafe/images/Anii_Chairs.jpeg' %}"
+                alt="Cafe Table"
+                >
+                
+                <div class="gallery-overlay">
+                    <div>
+                        <h5>Good Food, Good Mood</h5>
+                        <span>Moments Worth Sharing</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section class="contact-section py-5" id="contact">
+    
+    <div class="container py-5">
+        
+        <!-- Heading -->
+        <div class="text-center mb-5">
+            
+            <p class="contact-subtitle">
+                GET IN TOUCH
+            </p>
+            
+            <h2 class="contact-title">
+                We'd Love to Hear From You
+            </h2>
+            
+            <p class="contact-description mx-auto">
+                Have a question, feedback, or just want to say hello?
+                Drop us a message and we'll get back to you.
+            </p>
+            
+        </div>
+        
+        
+        <div class="row g-5 align-items-stretch">
+            
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                
+                <div class="contact-info">
+                    
+                    <h3>
+                        Let's Talk Coffee ☕
+                    </h3>
+                    
+                    <p class="contact-info-text">
+                        Whether you're looking for your perfect cup of
+                        coffee or planning your next visit, we're here
+                        to help.
+                    </p>
+                    
+                    
+                    <!-- Location -->
+                    <div class="contact-detail">
+                        
+                        <div class="contact-icon">
+                            📍
+                        </div>
+                        
+                        <div>
+                            <h6>Visit Us</h6>
+                            <p>
+                                Zip By Spree,<br>
+                                Pandharpur, Maharashtra
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <!-- Phone -->
+                    <div class="contact-detail">
+                        
+                        <div class="contact-icon">
+                            📞
+                        </div>
+                        
+                        <div>
+                            <h6>Call Us</h6>
+                            <p>
+                                +91 9356865977
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <!-- Email -->
+                    <div class="contact-detail">
+                        
+                        <div class="contact-icon">
+                            ✉️
+                        </div>
+                        
+                        <div>
+                            <h6>Email Us</h6>
+                            <p>
+                                hello@yourcafe.com
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <!-- Opening Hours -->
+                    <div class="contact-detail">
+                        
+                        <div class="contact-icon">
+                            🕐
+                        </div>
+                        
+                        <div>
+                            <h6>Opening Hours</h6>
+                            <p>
+                                Mon – Sun<br>
+                                9:00 AM – 10:00 PM
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                
+                <div class="contact-form">
+                    
+                    <h3>
+                        Send Us a Message
+                    </h3>
+                    
+                    <form method="POST" action="{% url 'home' %}">
+                        
+                        {% csrf_token %}
+                        
+                        <div class="row g-3">
+                            
+                            <!-- Name -->
+                            <div class="col-md-6">
+                                
+                                <label class="form-label">
+                                    Your Name
+                                </label>
+                                
+                                <input
+                                type="text"
+                                name="name"
+                                class="form-control contact-input"
+                                placeholder="Enter your name"
+                                required
+                                >
+                                
+                            </div>
+                            
+                            
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                
+                                <label class="form-label">
+                                    Email Address
+                                </label>
+                                
+                                <input
+                                type="email"
+                                name="email"
+                                class="form-control contact-input"
+                                placeholder="Enter your email"
+                                required
+                                >
+                                
+                            </div>
+                            
+                            
+                            <!-- Subject -->
+                            <div class="col-12">
+                                
+                                <label class="form-label">
+                                    Subject
+                                </label>
+                                
+                                <input
+                                type="text"
+                                name="subject"
+                                class="form-control contact-input"
+                                placeholder="What is this about?"
+                                required
+                                >
+                                
+                            </div>
+                            
+                            
+                            <!-- Message -->
+                            <div class="col-12">
+                                
+                                <label class="form-label">
+                                    Message
+                                </label>
+                                
+                                <textarea
+                                name="message"
+                                class="form-control contact-input"
+                                rows="5"
+                                placeholder="Write your message..."
+                                required
+                                ></textarea>
+                                
+                            </div>
+                            
+                            
+                            <!-- Button -->
+                            <div class="col-12">
+                                
+                                <button
+                                type="submit"
+                                class="btn contact-btn"
+                                >
+                                Send Message
+                                <span>→</span>
+                            </button>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </form>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer class="story-footer">
+    
+    <div class="container">
+        
+        <div class="row gy-4">
+            
+            <div class="col-lg-5">
+                
+                <h3>
+                    Aniket<span>Café</span>
+                </h3>
+                
+                <p>
+                    A cozy place for coffee, conversations
+                    and unforgettable moments.
+                </p>
+                
+            </div>
+            
+            
+            <div class="col-lg-3">
+                
+                <h5>Explore</h5>
+                
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+                
+                <a href="{% url 'menu' %}">
+                    Menu
+                </a>
+                
+                <a href="{% url 'Our_Story' %}">
+                    Our Story
+                </a>
+                
+            </div>
+            
+            
+            <div class="col-lg-4">
+                
+                <h5>Visit Us</h5>
+                
+                <p>
+                    <i class="bi bi-geo-alt"></i>
+                    Zip By Spree Hotels Pandharpur, Dist. Solapur, Maharashtra
+                </p>
+                
+                
+                <p>
+                    <i class="bi bi-clock"></i>
+                    Open Daily · 9:00 AM – 10:00 PM
+                </p>
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="footer-bottom">
+            
+            <p>
+                © 2026 Aniket Café. All rights reserved.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/anii_3317/" 
+                target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+            </a>
+            
+            
+            
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1Er5zxgove/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="bi bi-facebook"></i>
+        </a>
+
+
+        
+        <a href="https://wa.me/9356865977"
+        target="_blank"
+        rel="noopener noreferrer">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="{% static 'cafe/js/Home_Script.js' %}"></script>
+<script src="{% static 'cafe/js/Menu_Script.js' %}"></script>
+<script src="{% static 'cafe/js/Opening.js' %}"></script>
+
+</body>
+</html>

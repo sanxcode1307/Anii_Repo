@@ -1,0 +1,334 @@
+/* ==============================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #120b08;
+    color: #fff;
+}
+
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.cafe-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 22px 0;
+
+    background: transparent;
+}
+
+
+/* LOGO */
+
+.cafe-logo {
+    color: #f4dfc1 !important;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 27px;
+}
+
+
+/* NAV LINKS */
+
+.navbar-nav {
+    gap: 10px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    padding: 10px 18px !important;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #f4dfc1 !important;
+}
+
+
+/* underline animation */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 3px;
+
+    height: 1px;
+
+    background: #c99b68;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+
+/* ==============================
+   HAMBURGER
+================================ */
+
+.hamburger-btn {
+    border: none !important;
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.hamburger-line {
+    width: 27px;
+    height: 2px;
+
+    background: #f4dfc1;
+
+    display: block;
+
+    transition: 0.3s ease;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 5, 3, 0.95) 0%,
+            rgba(10, 5, 3, 0.75) 45%,
+            rgba(10, 5, 3, 0.35) 100%
+        ),
+        url("../images/milkshakeA.png");
+
+    background-size: cover;
+    background-position: center;
+
+    /* Animation */
+    transition: background-position 0.15s ease-out;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+    width: min(650px, 90%);
+
+    margin-left: 8%;
+
+    padding-top: 70px;
+}
+
+
+.hero-small {
+    color: #c99b68;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: clamp(60px, 8vw, 115px);
+
+    line-height: 0.9;
+
+    font-weight: 800;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #c99b68;
+}
+
+
+.hero-description {
+    max-width: 500px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==============================
+   HERO BUTTONS
+================================ */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+}
+
+.btn-menu {
+    background: #c99b68;
+
+    color: #160d08;
+
+    border: 1px solid #c99b68;
+
+    padding: 13px 28px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.btn-menu:hover {
+    background: #f4dfc1;
+
+    border-color: #f4dfc1;
+
+    color: #160d08;
+
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 991px) {
+
+    .cafe-navbar {
+        padding: 18px 0;
+    }
+
+    .navbar-collapse {
+        margin-top: 18px;
+
+        padding: 15px;
+
+        background: rgba(18, 11, 8, 0.96);
+
+        backdrop-filter: blur(15px);
+
+        border: 1px solid rgba(244, 223, 193, 0.1);
+    }
+
+    .navbar-nav {
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 13px 10px !important;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .hero-content {
+        margin-left: 6%;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .cafe-logo {
+        font-size: 21px;
+    }
+
+    .logo-icon {
+        font-size: 23px;
+    }
+
+    .hero {
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        margin-left: 5%;
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 180px;
+    }
+
+}

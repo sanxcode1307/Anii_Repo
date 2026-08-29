@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Aniket Café</title>
+    <link rel="stylesheet" href="{% static 'cafe/css/Opening_Style.css' %}">
+</head>
+<body>
+    
+    <!-- =====================================================
+    ANIKET CAFÉ — GRAND OPENING CEREMONY
+    ===================================================== -->
+    
+    <div id="openingOverlay" class="opening-overlay">
+        
+        <div class="opening-glow"></div>
+        
+        <div class="opening-content">
+            
+            <!-- Personal Message -->
+            <p class="opening-small">
+                A SPECIAL MOMENT FOR
+            </p>
+            
+            <h1>
+                ANIKET
+                <span>CAFÉ</span>
+            </h1>
+            
+            <p class="opening-title">
+                GRAND OPENING
+            </p>
+            
+            <div class="personal-message">
+                
+                <h2>
+                    Congratulations, Aniket! ❤️
+                </h2>
+                
+                <p>
+                    A new dream, a new beginning
+                    and a place you can finally call your own.
+                </p>
+                
+                <p class="proud-message">
+                    I'm genuinely proud of you.
+                </p>
+                
+            </div>
+            
+            
+            <!-- Ribbon Cutting Area -->
+            
+            <div class="cutting-area">
+                
+                <p class="cut-instruction">
+                    ✂ Drag the scissors to cut the ribbon
+                </p>
+                
+                <div class="ribbon-container">
+                    
+                    <!-- Left Ribbon -->
+                    <div
+                    id="ribbonLeft"
+                    class="ribbon ribbon-left">
+                </div>
+                
+                <!-- Center Cutting Point -->
+                <div
+                id="cutPoint"
+                class="cut-point">
+                CUT
+            </div>
+            
+            <!-- Right Ribbon -->
+            <div
+            id="ribbonRight"
+            class="ribbon ribbon-right">
+        </div>
+        
+        <!-- Scissors -->
+        <div
+        id="scissors"
+        class="scissors"
+        draggable="false">
+        
+        ✂️
+        
+    </div>
+    
+</div>
+
+</div>
+
+
+<!-- Success Message -->
+
+<div
+id="successMessage"
+class="success-message">
+
+<div class="confetti-symbols">
+    🎉 ✨ 🎊 ✨ 🎉
+</div>
+
+<h2>
+    WE'RE OPEN!
+</h2>
+
+<p>
+    Congratulations, Aniket ❤️
+</p>
+
+<p>
+    Your dream has officially begun.
+</p>
+
+<a href="{% url 'home' %}" class="enter-cafe-btn">
+    Enter Café
+    <span>→</span>
+</a>
+
+
+
+</div>
+
+</div>
+
+
+<!-- Skip -->
+<button
+id="skipOpening"
+class="skip-opening">
+
+Skip
+
+</button>
+
+</div>
+
+<script src="{% static 'cafe/js/Opening.js' %}"></script>
+
+</body>
+</html>
